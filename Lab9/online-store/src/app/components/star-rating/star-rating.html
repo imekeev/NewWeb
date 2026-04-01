@@ -1,0 +1,17 @@
+<div class="star-rating">
+  @for (star of [1, 2, 3, 4, 5]; track star){
+    <span
+      class="star"
+      [class.filled]="isStarFilled(star)"
+      [class.readonly]="readonly()"
+      (mouseenter)="onStarHover(star)"
+      (mouseleave)="onStarLeave()"
+      (click)="onStarClick(star)">
+      @if (isStarFilled(star)) {
+        ★
+      } @else {
+        ☆
+      }
+    </span>
+  }
+</div>
